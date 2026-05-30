@@ -1,0 +1,134 @@
+/* ════════════════════════════════════════════════════════
+   BASE.CSS — Reset · Variables · Fonts · Global utilities
+   Hello World — Farid Alfiyansah
+════════════════════════════════════════════════════════ */
+
+/* ─── Hard Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Design Tokens ─── */
+:root {
+  --black:      #000000;
+  --white:      #ffffff;
+  --off-white:  #f0f0f0;
+  --gray-100:   #e8e8e8;
+  --gray-300:   #aaaaaa;
+  --gray-500:   #666666;
+  --gray-700:   #333333;
+  --gray-900:   #111111;
+
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-mono:    'DM Mono', 'Courier New', monospace;
+
+  /* Easing presets */
+  --ease-cinema:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-drama:   cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth:  cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout */
+  --h-pad: clamp(24px, 8vw, 120px);
+  --v-pad: clamp(80px, 14vw, 180px);
+}
+
+/* ─── Root ─── */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-display);
+  overflow-x: hidden;
+  cursor: none;               /* hidden in favour of custom cursor */
+}
+
+/* Minimal scrollbar */
+::-webkit-scrollbar        { width: 2px; }
+::-webkit-scrollbar-track  { background: var(--black); }
+::-webkit-scrollbar-thumb  { background: var(--gray-700); border-radius: 2px; }
+
+/* ─── Custom Cursor ─── */
+.cursor-dot {
+  position: fixed;
+  inset: auto;
+  width: 7px;
+  height: 7px;
+  background: var(--white);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  transition: width  0.25s var(--ease-cinema),
+              height 0.25s var(--ease-cinema);
+  will-change: left, top;
+}
+
+.cursor-ring {
+  position: fixed;
+  inset: auto;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  transition: width  0.4s var(--ease-cinema),
+              height 0.4s var(--ease-cinema),
+              opacity 0.3s,
+              border-color 0.3s;
+  will-change: left, top;
+}
+
+.cursor-dot.is-hover  { width: 18px; height: 18px; }
+.cursor-ring.is-hover { width: 56px; height: 56px; border-color: rgba(255,255,255,0.5); }
+
+/* Hide custom cursor on touch/mobile */
+@media (hover: none) {
+  .cursor-dot, .cursor-ring { display: none; }
+  body { cursor: auto; }
+}
+
+/* ─── Reveal utility classes (JS will animate) ─── */
+
+/* Text that slides up from clip */
+.line-clip {
+  display: block;
+  overflow: hidden;
+  /* Extra vertical space so descenders aren't clipped */
+  padding-bottom: 0.06em;
+  line-height: 0.9;
+}
+
+.reveal-up {
+  display: inline-block;
+  transform: translateY(110%);
+  will-change: transform;
+}
+
+/* Opacity + Y fade */
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(18px);
+  will-change: opacity, transform;
+}
+
+/* ─── Global italic utility ─── */
+.italic { font-style: italic; }
+
+/* ─── Focusable links accessible ring ─── */
+a:focus-visible {
+  outline: 1px solid rgba(255,255,255,0.4);
+  outline-offset: 4px;
+}
