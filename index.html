@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HELLO WORLD — Farid Alfiyansah</title>
+  <meta name="description" content="A cinematic digital experience. Built by Farid Alfiyansah." />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/splash.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════
+       SPLASH SCREEN — Cinematic opening
+  ══════════════════════════════════════════════════ -->
+  <div id="splash" role="presentation" aria-hidden="true">
+    <canvas id="splash-canvas"></canvas>
+
+    <div class="splash-inner">
+      <p class="splash-eyebrow" id="splash-eyebrow">EST. 2025 &nbsp;·&nbsp; RLC STUDIO INC.</p>
+
+      <div class="splash-headline">
+        <div class="word-wrap"><span class="splash-word" id="sw-hello">HELLO</span></div>
+        <div class="word-wrap"><span class="splash-word italic" id="sw-world">WORLD</span></div>
+      </div>
+
+      <p class="splash-tagline" id="splash-tagline">A DIGITAL EXPERIENCE</p>
+    </div>
+
+    <div class="splash-progress" id="splash-progress"></div>
+    <div class="splash-vignette"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════════════════════ -->
+  <main id="main" class="main-hidden" aria-label="Main content">
+
+    <!-- Persistent ambient canvas -->
+    <canvas id="main-canvas" aria-hidden="true"></canvas>
+
+    <!-- Custom cursor -->
+    <div class="cursor-dot"   id="cursor-dot"   aria-hidden="true"></div>
+    <div class="cursor-ring"  id="cursor-ring"  aria-hidden="true"></div>
+
+    <!-- Audio control -->
+    <button class="audio-btn" id="audio-btn" aria-label="Toggle ambient audio">
+      <span class="audio-symbol" id="audio-symbol">&#9835;</span>
+      <span class="audio-label"  id="audio-label">MUTED</span>
+    </button>
+
+    <!-- ─────────────── SECTION 1 · HERO ─────────────── -->
+    <section id="hero" class="section">
+      <div class="hero-wrap">
+        <p class="eyebrow reveal-fade">EXPERIENCE &nbsp;/&nbsp; 001</p>
+
+        <h1 class="hero-title">
+          <span class="line-clip"><span class="reveal-up" id="h-hello">HELLO</span></span>
+          <span class="line-clip italic"><span class="reveal-up" id="h-world">WORLD</span></span>
+        </h1>
+
+        <p class="hero-sub reveal-fade">
+          Something that begins with two words<br />and ends with everything.
+        </p>
+
+        <div class="scroll-cue reveal-fade" aria-hidden="true">
+          <span class="scroll-tick"></span>
+          <span class="scroll-label">SCROLL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────── SECTION 2 · ABOUT ─────────────── -->
+    <section id="about" class="section">
+      <div class="about-wrap">
+        <p class="section-num reveal-fade">002 &nbsp;/&nbsp; ABOUT</p>
+
+        <h2 class="about-heading">
+          <span class="line-clip"><span class="reveal-up">About</span></span>
+          <span class="line-clip italic"><span class="reveal-up">Me</span></span>
+        </h2>
+
+        <p class="about-body reveal-fade">
+          Hi, I'm Farid Alfiyansah — someone who enjoys building, exploring, and transforming ideas
+          into digital experiences. I believe even simple things can become memorable when crafted
+          with enough detail.
+        </p>
+
+        <div class="about-rule"></div>
+      </div>
+    </section>
+
+    <!-- ─────────────── SECTION 3 · GITHUB ─────────────── -->
+    <section id="github" class="section">
+      <div class="github-wrap">
+        <p class="section-num reveal-fade">003 &nbsp;/&nbsp; CONNECT</p>
+
+        <h2 class="github-heading">
+          <span class="line-clip"><span class="reveal-up">Find Me</span></span>
+          <span class="line-clip italic"><span class="reveal-up">Online</span></span>
+        </h2>
+
+        <div class="profile-card" id="profile-card" role="article">
+          <div class="card-glass"></div>
+          <div class="card-shine" id="card-shine"></div>
+          <div class="card-frame" id="card-frame"></div>
+
+          <div class="card-body">
+            <div class="card-avatar" aria-hidden="true">
+              <div class="avatar-orbit"></div>
+              <div class="avatar-core">FA</div>
+            </div>
+
+            <div class="card-identity">
+              <p class="card-fullname">Farid Alfiyansah</p>
+              <p class="card-handle">@R1dzzz</p>
+            </div>
+
+            <div class="card-hr" aria-hidden="true"></div>
+
+            <div class="card-tags" aria-label="Skills">
+              <span class="tag">Web Dev</span>
+              <span class="tag">Cloud Computing</span>
+              <span class="tag">RLC Studio</span>
+            </div>
+
+            <a
+              href="https://github.com/R1dzzz"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card-link"
+              aria-label="View GitHub profile of R1dzzz"
+            >
+              <span>View Profile</span>
+              <span class="link-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────── SECTION 4 · SIGNATURE ─────────────── -->
+    <footer id="signature" class="section section-sm" role="contentinfo">
+      <div class="sig-wrap">
+        <div class="sig-stem" aria-hidden="true"></div>
+        <p class="sig-pre">Designed &amp; Built by</p>
+        <p class="sig-name reveal-fade">Farid Alfiyansah</p>
+        <div class="sig-meta">
+          <span>© 2025</span>
+          <span class="meta-sep" aria-hidden="true">·</span>
+          <span>RLC Studio Inc.</span>
+          <span class="meta-sep" aria-hidden="true">·</span>
+          <span>Hello World</span>
+        </div>
+      </div>
+    </footer>
+
+  </main><!-- /main -->
+
+  <!-- Easter Egg Overlay -->
+  <div id="egg-overlay" role="dialog" aria-modal="true" aria-label="Secret mode activated" aria-hidden="true">
+    <canvas id="egg-canvas" aria-hidden="true"></canvas>
+    <div class="egg-inner" id="egg-inner">
+      <p class="egg-pre">✦ &nbsp; SECRET MODE &nbsp; ✦</p>
+      <h2 class="egg-title">
+        <span>You Found</span><br />
+        <span class="italic">The Secret</span>
+      </h2>
+      <p class="egg-code">↑ ↑ ↓ ↓ ← → ← → B A</p>
+      <button class="egg-close" id="egg-close">CLOSE &nbsp; ✕</button>
+    </div>
+  </div>
+
+  <!-- GSAP 3 + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+          integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+          integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"></script>
+
+  <!-- App modules (order matters) -->
+  <script src="js/particles.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/splash.js"></script>
+  <script src="js/easter-egg.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
